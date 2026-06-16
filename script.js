@@ -126,6 +126,24 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(createPetal, 800);
 
 
+    // ===== MUSIC TOGGLE =====
+    const musicBtn = document.getElementById('music-toggle');
+    const bgMusic = document.getElementById('bg-music');
+    let isPlaying = false;
+    musicBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            bgMusic.pause();
+            musicBtn.classList.remove('playing');
+            musicBtn.querySelector('.music-text').textContent = 'Music';
+        } else {
+            bgMusic.volume = 0.3;
+            bgMusic.play().catch(() => {});
+            musicBtn.classList.add('playing');
+            musicBtn.querySelector('.music-text').textContent = 'Playing';
+        }
+        isPlaying = !isPlaying;
+    });
+
     // ===== NAVBAR SCROLL =====
     const navbar = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
