@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 For My Love — A Special Message For You</title>
+    <meta name="description" content="A romantic proposal website crafted with love, for the most special person in my life.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Hearts Canvas -->
+    <canvas id="hearts-canvas"></canvas>
+
+    <!-- Rose Petal Rain -->
+    <div id="petal-container"></div>
+
+    <!-- ==================== GATE SCREEN ==================== -->
+    <section id="gate-screen" class="gate-screen">
+        <div class="gate-overlay"></div>
+        <div class="gate-content">
+            <div class="gate-heart-container">
+                <div class="gate-heart">💝</div>
+            </div>
+            <h1 class="gate-title">I Have Something<br>Special For You</h1>
+            <p class="gate-subtitle">This is a private space, crafted with love</p>
+            <div class="gate-input-group">
+                <label for="gate-password">Enter our special word to continue...</label>
+                <input type="password" id="gate-password" placeholder="Type the magic word 💫" autocomplete="off">
+                <p class="gate-hint">Hint: Just type <strong>"love"</strong> ❤️</p>
+            </div>
+            <button id="gate-enter-btn" class="gate-btn">
+                <span>Open My Heart</span>
+                <span class="btn-sparkle">✨</span>
+            </button>
+            <p id="gate-error" class="gate-error"></p>
+        </div>
+    </section>
+
+    <!-- ==================== MAIN WEBSITE ==================== -->
+    <main id="main-site" class="main-site hidden">
+
+        <!-- Navigation -->
+        <nav id="main-nav" class="navbar">
+            <div class="nav-brand">
+                <span class="nav-heart">💕</span>
+                <span class="nav-text">Our Love Story</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#love-letter">Letter</a></li>
+                <li><a href="#reasons">Reasons</a></li>
+                <li><a href="#timeline">Moments</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#proposal">Proposal</a></li>
+            </ul>
+            <button id="nav-toggle" class="nav-hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <!-- ===== SECTION 1: HERO ===== -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-overlay"></div>
+            <img src="hero-bg.png" alt="" class="hero-bg-img">
+            <div class="hero-content">
+                <p class="hero-pretext fade-up">Every love story is beautiful, but ours is...</p>
+                <h1 class="hero-title fade-up delay-1">
+                    <span class="hero-line">My Favorite</span>
+                    <span class="hero-line accent">Love Story</span>
+                </h1>
+                <div class="hero-divider fade-up delay-2">
+                    <span class="divider-line"></span>
+                    <span class="divider-heart">♥</span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="hero-subtitle fade-up delay-3" id="typewriter-text"></p>
+                <a href="#love-letter" class="hero-cta fade-up delay-4">
+                    <span>Read My Heart</span>
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7 7 7-7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-dot"></div>
+                </div>
+                <p>Scroll down</p>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2: LOVE LETTER ===== -->
+        <section id="love-letter" class="letter-section">
+            <div class="section-header">
+                <span class="section-icon">💌</span>
+                <h2 class="section-title">A Letter From My Heart</h2>
+                <div class="section-divider">
+                    <span></span><span class="diamond">◆</span><span></span>
+                </div>
+            </div>
+            <div class="letter-container">
+                <div class="letter-paper">
+                    <div class="letter-stamp">💋</div>
+                    <div class="letter-date">Written with all my love</div>
+                    <h3 class="letter-greeting">Dear Manaswi,</h3>
+                    <div class="letter-body">
+                        <p>Ever since you walked into my life, everything has changed for the better. You are like a beautiful dream that I never want to wake up from.</p>
+                        <p>I know you sometimes feel a bit insecure and think you are unlucky. But the truth is, you are absolutely perfect just the way you are. In fact, by having you in my life, I have become the luckiest guy in the world.</p>
+                        <p>Loving you has been the easiest and the best decision of my life. You are not just my love, you are my home—the place where I find the greatest peace. I promise to spend every single day making you as happy as you make me.</p>
+                    </div>
+                    <div class="letter-closing">
+                        <p>Forever Yours,</p>
+                        <p class="letter-signature">Himanshu ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3: REASONS I LOVE YOU ===== -->
+        <section id="reasons" class="reasons-section">
+            <div class="section-header">
+                <span class="section-icon">💖</span>
+                <h2 class="section-title">Reasons I Love You</h2>
+                <div class="section-divider">
+                    <span></span><span class="diamond">◆</span><span></span>
+                </div>
+                <p class="section-subtitle">There are a million reasons, but here are a few that make my heart skip a beat...</p>
+            </div>
+            <div class="reasons-grid">
+                <div class="reason-card" data-reason="1">
+                    <div class="reason-number">01</div>
+                    <div class="reason-icon">✨</div>
+                    <h3>Your Beautiful Smile</h3>
+                    <p>Your smile is the most beautiful thing I've ever seen. It lights up my world and makes every dark moment bright again.</p>
+                </div>
+                <div class="reason-card" data-reason="2">
+                    <div class="reason-number">02</div>
+                    <div class="reason-icon">🌙</div>
+                    <h3>Your Kind Heart</h3>
+                    <p>The way you care about everyone around you, your kindness, your compassion — it makes me fall in love with you all over again, every single day.</p>
+                </div>
+                <div class="reason-card" data-reason="3">
+                    <div class="reason-number">03</div>
+                    <div class="reason-icon">🦋</div>
+                    <h3>The Butterflies</h3>
+                    <p>Even after all this time, you still give me butterflies. Just hearing your voice or seeing your name on my phone makes my heart race.</p>
+                </div>
+                <div class="reason-card" data-reason="4">
+                    <div class="reason-number">04</div>
+                    <div class="reason-icon">🌹</div>
+                    <h3>You Understand Me</h3>
+                    <p>You get me like nobody else. You understand my silence, my fears, my dreams — and you love me through all of it.</p>
+                </div>
+                <div class="reason-card" data-reason="5">
+                    <div class="reason-number">05</div>
+                    <div class="reason-icon">🌸</div>
+                    <h3>You Are My Peace</h3>
+                    <p>In a world full of chaos, you are my calm. Being with you feels like coming home after the longest journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 4: OUR MOMENTS TIMELINE ===== -->
+        <section id="timeline" class="timeline-section">
+            <div class="section-header">
+                <span class="section-icon">📖</span>
+                <h2 class="section-title">Our Beautiful Moments</h2>
+                <div class="section-divider">
+                    <span></span><span class="diamond">◆</span><span></span>
+                </div>
+                <p class="section-subtitle">Every moment with you becomes a precious memory I treasure forever</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item left">
+                    <div class="timeline-dot">💕</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">The Beginning</span>
+                        <h3>Amity Fresher's Practice</h3>
+                        <p>We first met during the Amity University fresher's party practice. At that time, my mind was blank and I had absolutely no idea that something so beautiful was about to begin.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-dot">🌟</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">The Connection</span>
+                        <h3>Lunchtime Conversations</h3>
+                        <p>Our first real conversation happened during lunch, just like two friends casually talking. Little did I know that casual friend would soon become my whole world.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-dot">💝</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">The Realization</span>
+                        <h3>Falling For Your Kind Heart</h3>
+                        <p>A few days ago, it hit me that we had naturally fallen in love just by being together. I absolutely adore your pure, kind heart and how you overshare everything with me.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-dot">🦋</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">The Feeling</span>
+                        <h3>Butterflies Inside</h3>
+                        <p>Today is a day I'll always remember. Knowing that you were getting butterflies inside just thinking about us... that magical feeling is something I want to cherish forever.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-dot">💍</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">Forever</span>
+                        <h3>Our Beautiful Future</h3>
+                        <p>I want to keep listening to your stories, keep making you smile, and keep falling for your pure heart every single day. Together, forever — that's my only wish.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 5: GALLERY ===== -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <span class="section-icon">📸</span>
+                <h2 class="section-title">Moments Captured</h2>
+                <div class="section-divider">
+                    <span></span><span class="diamond">◆</span><span></span>
+                </div>
+                <p class="section-subtitle">Every picture tells a story of our love</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="image1.png" alt="Our special memory">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">My Favorite Memory 💖</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image2.png" alt="Precious moments">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Precious Moments 🌙</span>
+                    </div>
+                </div>
+                <div class="gallery-item tall">
+                    <img src="image3.png" alt="My love for you">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">My Whole World 🌍</span>
+                    </div>
+                </div>
+                <div class="gallery-item large">
+                    <img src="Pasted image.png" alt="Our special moment">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">You & Me Forever 💗</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 6: THE PROPOSAL ===== -->
+        <section id="proposal" class="proposal-section">
+            <img src="roses-bg.png" alt="" class="proposal-bg-img">
+            <div class="proposal-overlay"></div>
+            <div class="proposal-content">
+                <div class="proposal-ring">💍</div>
+                <h2 class="proposal-title">
+                    <span class="proposal-line">Will You Be</span>
+                    <span class="proposal-line accent">Mine Forever?</span>
+                </h2>
+                <p class="proposal-text">
+                    I've searched my whole life for someone like you. You are my dream come true, 
+                    my answered prayer, my everything. I can't imagine my life without you in it. 
+                    You are the reason I believe in love, in magic, in forever.
+                </p>
+                <p class="proposal-question">So I'm asking you, with all my heart...</p>
+                <h3 class="proposal-ask">Will you be my forever? ❤️</h3>
+                <div class="proposal-buttons">
+                    <button id="yes-btn" class="proposal-btn yes-btn">
+                        <span class="btn-heart">💝</span>
+                        <span>Yes, Forever!</span>
+                    </button>
+                    <button id="no-btn" class="proposal-btn no-btn">
+                        <span>Hmm, let me think...</span>
+                    </button>
+                </div>
+                <div id="celebration" class="celebration hidden">
+                    <h2 class="celebration-title">You Made Me The Happiest Person! 🎉</h2>
+                    <p class="celebration-text">I promise to love you, cherish you, and make you smile every single day. This is just the beginning of our forever. ❤️</p>
+                    <div class="celebration-hearts">
+                        💕 💖 💝 💗 💕 💖 💝 💗 💕 💖
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-heart">💕</div>
+                <p class="footer-text">Made with infinite love, just for you</p>
+                <p class="footer-signature">— Your Love ❤️</p>
+                <div class="footer-stars">
+                    ✨ · 💫 · ⭐ · 💫 · ✨
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
