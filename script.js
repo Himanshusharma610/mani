@@ -137,6 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
             musicBtn.querySelector('.music-text').textContent = 'Music';
         } else {
             bgMusic.volume = 0.3;
+            if (bgMusic.currentTime < 15) {
+                bgMusic.currentTime = 15;
+            }
             bgMusic.play().catch(() => {});
             musicBtn.classList.add('playing');
             musicBtn.querySelector('.music-text').textContent = 'Playing';
