@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 18 June — A Special Memory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, var(--midnight), var(--deep-purple), var(--wine));
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .diary-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            position: relative;
+            z-index: 2;
+        }
+        .diary-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,107,138,0.2);
+            border-radius: 30px;
+            padding: 60px 50px;
+            max-width: 800px;
+            text-align: center;
+            animation: fadeUp 1s ease forwards;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,107,138,0.1);
+            position: relative;
+        }
+        .diary-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: floatRing 3s ease-in-out infinite;
+        }
+        .diary-date {
+            font-family: var(--font-elegant);
+            color: var(--pink-glow);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .diary-title {
+            font-family: var(--font-script);
+            font-size: 4.5rem;
+            color: var(--rose);
+            margin-bottom: 30px;
+            line-height: 1.2;
+            text-shadow: 0 5px 15px rgba(201,24,74,0.3);
+        }
+        .diary-text {
+            font-family: var(--font-body);
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            line-height: 2;
+            margin-bottom: 25px;
+        }
+        .diary-highlight {
+            color: var(--cream);
+            font-weight: 500;
+            font-style: italic;
+            font-size: 1.5rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--rose), var(--wine));
+            border: none;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.4s;
+            box-shadow: 0 10px 30px rgba(201,24,74,0.3);
+        }
+        .back-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(201,24,74,0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .diary-card { padding: 40px 25px; }
+            .diary-title { font-size: 3.2rem; }
+            .diary-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="hearts-canvas"></canvas>
+    
+    <nav class="navbar scrolled" style="position: fixed;">
+        <div class="nav-brand">
+            <span class="nav-heart">💕</span>
+            <span class="nav-text">Our Love Story</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Back to Home</a></li>
+        </ul>
+    </nav>
+
+    <section class="diary-section">
+        <div class="diary-card">
+            <div class="diary-icon">📱💬</div>
+            <div class="diary-date">18 June 2026</div>
+            <h1 class="diary-title">Our First Long Video Call</h1>
+            
+            <p class="diary-text">
+                Aaj hum dono college nahi gaye aur mil nahi paaye... par sach batau? Maine tumhe <span class="diary-highlight">bohot miss kiya</span>. 
+            </p>
+            <p class="diary-text">
+                Par jo uske baad hua, wo sabse pyaara tha. Humari wo lambi Video Call. <span class="diary-highlight">Pehli baar maine kisi se itni lambi aur itni pyaari baat ki hai.</span> Hum dono ne ek dusre ko apna pyaar jataya, aur ek dusre ko kitna miss kar rahe hain ye bataya. 
+            </p>
+            <p class="diary-text">
+                Wo screen ke uss paar se tumhari beautiful smile dekhna, meri din ki sabse achhi cheez thi. Ye duriyaan sirf physical hain, dil toh humesha ek doosre ke paas hi rehte hain. ❤️
+            </p>
+            
+            <a href="index.html" class="back-btn">
+                <span>⬅ Back to Our Story</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating Hearts Script -->
+    <script>
+        const canvas = document.getElementById('hearts-canvas');
+        const ctx = canvas.getContext('2d');
+        let hearts = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Heart {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + 20;
+                this.size = Math.random() * 12 + 6;
+                this.speedY = Math.random() * 1.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.opacity = Math.random() * 0.4 + 0.1;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotSpeed = (Math.random() - 0.5) * 0.03;
+                this.color = ['#c9184a', '#ff6b8a', '#ff8fab', '#d4a853', '#e91e63'][Math.floor(Math.random() * 5)];
+            }
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX + Math.sin(this.y * 0.01) * 0.5;
+                this.rotation += this.rotSpeed;
+                if (this.y < -30) this.reset();
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                const s = this.size;
+                ctx.moveTo(0, s * 0.3);
+                ctx.bezierCurveTo(-s * 0.5, -s * 0.3, -s, s * 0.1, 0, s);
+                ctx.bezierCurveTo(s, s * 0.1, s * 0.5, -s * 0.3, 0, s * 0.3);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < 25; i++) {
+            const h = new Heart();
+            h.y = Math.random() * canvas.height;
+            hearts.push(h);
+        }
+
+        function animateHearts() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            hearts.forEach(h => { h.update(); h.draw(); });
+            requestAnimationFrame(animateHearts);
+        }
+        animateHearts();
+    </script>
+</body>
+</html>
