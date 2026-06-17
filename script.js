@@ -215,6 +215,41 @@ document.addEventListener('DOMContentLoaded', () => {
         noClickCount++;
     });
 
+    // ===== COUNTDOWN TIMER =====
+    const countdownDate = new Date("October 3, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("cd-days").innerText = "00";
+            document.getElementById("cd-hours").innerText = "00";
+            document.getElementById("cd-minutes").innerText = "00";
+            document.getElementById("cd-seconds").innerText = "00";
+            const titleEl = document.querySelector(".countdown-title");
+            if (titleEl) titleEl.innerText = "Happy Birthday Mannu Sweet Heart! 🎉";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const cdDays = document.getElementById("cd-days");
+        if(cdDays) {
+            cdDays.innerText = days < 10 ? "0" + days : days;
+            document.getElementById("cd-hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("cd-minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("cd-seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+    }
+    
+    updateCountdown();
+    const countdownInterval = setInterval(updateCountdown, 1000);
+
     // ===== CSS SHAKE ANIMATION (injected) =====
     const style = document.createElement('style');
     style.textContent = `
