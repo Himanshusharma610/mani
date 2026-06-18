@@ -97,6 +97,46 @@
             .diary-title { font-size: 3.2rem; }
             .diary-text { font-size: 1.2rem; }
         }
+        
+        /* Gallery Styles */
+        .gallery-section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            z-index: 2;
+            position: relative;
+        }
+        .gallery-title {
+            text-align: center;
+            font-family: var(--font-script);
+            font-size: 3.5rem;
+            color: var(--rose);
+            margin-bottom: 40px;
+            text-shadow: 0 5px 15px rgba(201,24,74,0.3);
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .media-item {
+            background: var(--glass);
+            border: 1px solid rgba(255,107,138,0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease;
+            aspect-ratio: 4/5;
+        }
+        .media-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255,107,138,0.2);
+        }
+        .media-item img, .media-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -131,6 +171,54 @@
             <a href="index.html" class="back-btn">
                 <span>⬅ Back to Our Story</span>
             </a>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2 class="gallery-title">Memories from Today 📸</h2>
+        <div class="media-grid">
+            <div class="media-item">
+                <img src="WhatsApp Image 2026-06-18 at 9.17.52 PM (1).jpeg" alt="Memory" loading="lazy">
+            </div>
+            <div class="media-item">
+                <img src="WhatsApp Image 2026-06-18 at 9.17.52 PM.jpeg" alt="Memory" loading="lazy">
+            </div>
+            <div class="media-item">
+                <img src="WhatsApp Image 2026-06-18 at 9.17.53 PM (1).jpeg" alt="Memory" loading="lazy">
+            </div>
+            <div class="media-item">
+                <img src="WhatsApp Image 2026-06-18 at 9.17.53 PM.jpeg" alt="Memory" loading="lazy">
+            </div>
+            <div class="media-item">
+                <img src="WhatsApp Image 2026-06-18 at 9.18.06 PM.jpeg" alt="Memory" loading="lazy">
+            </div>
+            <div class="media-item">
+                <img src="WhatsApp Image 2026-06-18 at 9.18.07 PM (1).jpeg" alt="Memory" loading="lazy">
+            </div>
+            <div class="media-item">
+                <img src="WhatsApp Image 2026-06-18 at 9.18.07 PM.jpeg" alt="Memory" loading="lazy">
+            </div>
+            <div class="media-item">
+                <img src="WhatsApp Image 2026-06-18 at 9.18.08 PM (1).jpeg" alt="Memory" loading="lazy">
+            </div>
+            <div class="media-item">
+                <img src="WhatsApp Image 2026-06-18 at 9.18.08 PM (2).jpeg" alt="Memory" loading="lazy">
+            </div>
+            <div class="media-item">
+                <video src="WhatsApp Video 2026-06-18 at 9.17.54 PM.mp4" controls loop muted playsinline></video>
+            </div>
+            <div class="media-item">
+                <video src="WhatsApp Video 2026-06-18 at 9.17.58 PM.mp4" controls loop muted playsinline></video>
+            </div>
+            <div class="media-item">
+                <video src="WhatsApp Video 2026-06-18 at 9.18.06 PM.mp4" controls loop muted playsinline></video>
+            </div>
+            <div class="media-item">
+                <video src="WhatsApp Video 2026-06-18 at 9.18.07 PM (1).mp4" controls loop muted playsinline></video>
+            </div>
+            <div class="media-item">
+                <video src="WhatsApp Video 2026-06-18 at 9.18.07 PM.mp4" controls loop muted playsinline></video>
+            </div>
         </div>
     </section>
 
